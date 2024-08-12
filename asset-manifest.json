@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/job-application-tracker/static/css/main.e90059bc.css",
+    "main.css": "/job-application-tracker/static/css/main.88cdf31a.css",
     "main.js": "/job-application-tracker/static/js/main.fd8997ab.js",
     "static/js/606.de1ccfef.chunk.js": "/job-application-tracker/static/js/606.de1ccfef.chunk.js",
     "static/js/639.08bb8273.chunk.js": "/job-application-tracker/static/js/639.08bb8273.chunk.js",
@@ -32,7 +32,7 @@
     "static/media/xtremelogo.svg": "/job-application-tracker/static/media/xtremelogo.24c4543c83283eb5c67518e48d3bacff.svg",
     "static/media/xtremelogowhite.svg": "/job-application-tracker/static/media/xtremelogowhite.0acdceff764585553ba055e4f1272a33.svg",
     "index.html": "/job-application-tracker/index.html",
-    "main.e90059bc.css.map": "/job-application-tracker/static/css/main.e90059bc.css.map",
+    "main.88cdf31a.css.map": "/job-application-tracker/static/css/main.88cdf31a.css.map",
     "main.fd8997ab.js.map": "/job-application-tracker/static/js/main.fd8997ab.js.map",
     "606.de1ccfef.chunk.js.map": "/job-application-tracker/static/js/606.de1ccfef.chunk.js.map",
     "639.08bb8273.chunk.js.map": "/job-application-tracker/static/js/639.08bb8273.chunk.js.map",
@@ -52,7 +52,7 @@
     "282.57900c8a.chunk.js.map": "/job-application-tracker/static/js/282.57900c8a.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.e90059bc.css",
+    "static/css/main.88cdf31a.css",
     "static/js/main.fd8997ab.js"
   ]
 }
