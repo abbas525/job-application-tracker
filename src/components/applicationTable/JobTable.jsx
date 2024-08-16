@@ -9,7 +9,11 @@ import DescriptionModal from "../DescriptionModal";
 
 const JobTable = ({ headings, data }) => {
   const [modal, setModal] = useState(false);
-  const toggle = () => setModal(!modal);
+  const [selectedRow, setSelectedRow] = useState(null);
+  const toggle = (rowIndex) => {
+    setSelectedRow(rowIndex);  // Set the selected row when modal is toggled
+    setModal(!modal);
+  };
   
   return (
     <Table responsive bordered style={{ width: "100%"}} className="rounded-3">
@@ -24,38 +28,33 @@ const JobTable = ({ headings, data }) => {
         {data.map((row, rowIndex) => (
           <tr key={rowIndex}>
             <td>{rowIndex + 1}</td>
-            <td>{row.Position}</td>
-            <td>{row.Company}</td>
-            <td>
-              <Input
-                id="applied"
-                name="appliedDate"
-                type="date"
-                className="border-0 p-0"
-              />
-            </td>
-            <td>
-              <a href={row.HRProfile} target="_blank" rel="noopener noreferrer">
-                HR Profile
+            <td>{row.position}</td>
+            <td>{row.company}</td>
+            <td>{row.location}</td>
+            <td>{row.dateApplied}</td>
+            <td><a href={row.hrProfile} target="_blank" rel="noopener noreferrer">
+                View Profile
               </a>
             </td>
-            <td>{row.FollowUp}</td>
+            <td>{row.followUp}</td>
             <td>
-              <FormGroup>
-                <Input id="status" name="select" type="select" className="border-0 py-0">
-                  <option>No Applied</option>
-                  <option>Applied</option>
-                  <option>Accepted</option>
-                  <option>Rejected</option>
-                  <option>Call Recieved</option>
-                </Input>
-              </FormGroup>
+            {row.status}
             </td>
-            <td>  <Button onClick={toggle} className="bg-white border-0 text-dark p-0 "> View </Button>
-                <DescriptionModal modal={modal} setModal={setModal} toggle={toggle} description={row.Description}/>
+            <td> 
+            <Button onClick={() => toggle(rowIndex)} className="bg-white border-0 text-dark p-0">
+                View
+              </Button>
+              {selectedRow === rowIndex && (
+                <DescriptionModal 
+                  modal={modal} 
+                  setModal={setModal} 
+                  toggle={() => toggle(rowIndex)} 
+                  description={row.description} 
+                />
+              )}
             </td>
             <td>
-              <a href={row.PostLink} target="_blank" rel="noopener noreferrer">
+              <a href={row.jobUrl} target="_blank" rel="noopener noreferrer">
                 Link
               </a>
             </td>

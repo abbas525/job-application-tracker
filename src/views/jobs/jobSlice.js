@@ -1,9 +1,10 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-    isLoading: false,
-    jobs: 0,
-    error: ''
+    jobs: [
+        { position: "Frontend Developer", company: "Cubix", dateApplied: "12-Aug-2024", location:'KHI', hrProfile:"https://www.google.com", followUp: "Date", status: "Applied", description: "lorem ipsum blah blah blah", jobUrl: "https://www.google.com" },
+            { position: "Frontend Developer", company: "Cubix", dateApplied: "12-Aug-2024", location: 'LHR', hrProfile:"https://www.google.com", followUp: "Date", status: "Applied", description: "lorem ipsum blah blah blah", jobUrl: "https://www.google.com" },
+    ]
 }
 
 
@@ -12,7 +13,7 @@ const jobSlice = createSlice({
     initialState,
     reducers: {
         addJob: (state, action) => {
-            state.jobs += action.payload
+            state.jobs.push(action.payload);
         }
     }
 })

@@ -1,6 +1,42 @@
+import { useState } from "react";
 import { Button, Col, Form, FormGroup, Input, Label, Row } from "reactstrap";
+import { useSelector, useDispatch } from "react-redux";
+import { addJob } from "../../views/jobs/jobSlice";
 
 const ApplicationForm = () => {
+  const [position, setPosition] = useState(null)
+  const [company, setCompany] = useState(null)
+  const [dateApplied, setDateApplied] = useState(null)
+  const [location, setLocation] = useState(null)
+  const [status, setStatus] = useState(null)
+  const [followUp, setFollowUp] = useState(null)
+  const [hrProfile, setHrProfile] = useState(null)
+  const [description, setDescription] = useState(null)
+  const [jobUrl, setJobUrl] = useState(null)
+
+  const jobData = useSelector((state) => state.job);
+  const dispatch = useDispatch();
+
+const handleSubmit = (e) => {
+  e.preventDefault();
+
+  const data = {
+    'position': position,
+    'company': company,
+    'dateApplied': dateApplied,
+    'location': location,
+    'status': status,
+    'followUp': followUp,
+    'hrProfile': hrProfile,
+    'description': description,
+    'jobUrl': jobUrl
+  }
+
+ dispatch(addJob(data))
+
+  console.log('submit', jobData);
+}
+
   return (
     <Form className="bg-white p-4 shadow-md ">
             <Row>
@@ -12,6 +48,7 @@ const ApplicationForm = () => {
                     name="position"
                     placeholder="Enter Job Position"
                     type="text"
+                    onChange={(e) => {setPosition(e.target.value)}}
                   />
                 </FormGroup>
               </Col>
@@ -23,6 +60,7 @@ const ApplicationForm = () => {
                     name="company"
                     placeholder="Company Name"
                     type="text"
+                    onChange={(e) => {setCompany(e.target.value)}}
                   />
                 </FormGroup>
               </Col>
@@ -36,6 +74,7 @@ const ApplicationForm = () => {
                     id="dateApplied"
                     name="dateApplied"
                     type="date"
+                    onChange={(e) => {setDateApplied(e.target.value)}}
                   />
                 </FormGroup>
               </Col>
@@ -47,6 +86,7 @@ const ApplicationForm = () => {
                     name="location"
                     placeholder="Location"
                     type="text"
+                    onChange={(e) => {setLocation(e.target.value)}}
                   />
                 </FormGroup>
               </Col>
@@ -55,8 +95,8 @@ const ApplicationForm = () => {
             <Row>
               <Col md={6}>
               <FormGroup>
-              <Label for="exampleSelect">Status</Label>
-              <Input id="exampleSelect" name="select" type="select">
+              <Label for="status">Status</Label>
+              <Input id="status" name="select" type="select"  onChange={(e) => {setStatus(e.target.value)}}>
                 <option>Not Applied</option>
                 <option>Applied</option>
                 <option>Accepted</option>
@@ -72,6 +112,7 @@ const ApplicationForm = () => {
                     id="follow-up-date"
                     name="follow-up-date"
                     type="date"
+                    onChange={(e) => {setFollowUp(e.target.value)}}
                   /> 
             </FormGroup>
               </Col>
@@ -81,18 +122,19 @@ const ApplicationForm = () => {
             
             <FormGroup>
               <Label for="description">Job Description</Label>
-              <Input id="description" name="text" type="textarea" Rows={5}/>
+              <Input id="description" name="text" type="textarea" Rows={5} onChange={(e) => {setDescription(e.target.value)}}/>
             </FormGroup>
            
             <Row>
               <Col md={6}>
                 <FormGroup>
-                  <Label for="hr-profile">HR Profile</Label>
+                  <Label for="hrProfile">HR Profile</Label>
                   <Input
-                    id="hr-profile"
-                    name="hr-profile"
+                    id="hrProfile"
+                    name="hrProfile"
                     placeholder="Enter Link to HR profile"
-                    type="text"
+                    type="url"
+                    onChange={(e) => {setHrProfile(e.target.value)}}
                   />
                 </FormGroup>
               </Col>
@@ -103,13 +145,14 @@ const ApplicationForm = () => {
                     id="job-url"
                     name="job-url"
                     placeholder="Enter link to Job Ad"
-                    type="text"
+                    type="url"
+                    onChange={(e) => {setJobUrl(e.target.value)}}
                   />
                 </FormGroup>
               </Col>
             </Row>
             
-            <Button>Save</Button>
+            <Button onClick={handleSubmit}>Save</Button>
           </Form>
   );
 };

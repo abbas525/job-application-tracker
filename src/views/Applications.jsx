@@ -2,9 +2,11 @@ import JobTable from "../components/applicationTable/JobTable";
 import { useSelector, useDispatch } from "react-redux";
 import { addJob } from "./jobs/jobSlice";
 import FilterJobs from "../components/forms/FilterJobs";
+import { useState } from "react";
 
 const Applications = () => {
 
+const jobData = useSelector((state) => state.job)
 
 
  
@@ -12,6 +14,7 @@ const Applications = () => {
         "No.",
         "Job position",
         "Company",
+        'Location',
         "Date applied",
         "HR profile",
         "Follow up",
@@ -20,10 +23,8 @@ const Applications = () => {
         "Link to Post"
       ];
 
-      const tableData = [
-        { Position: "Frontend Developer", Company: "Cubix", DateApplied: "12-Aug-2024", HRProfile:"https://www.google.com", FollowUp: "Date", Status: "Pending", Description: "lorem ipsum blah blah blah", PostLink: "https://www.google.com" },
-      ];
 
+     
     return ( 
         <>
             <h1>Applicaiton here</h1>
@@ -37,7 +38,7 @@ const Applications = () => {
                   </div>
                   <div className="row">
                     <div className="col-md-12">
-                    <JobTable  headings={headings} data={tableData}/>
+                    <JobTable  headings={headings} data={jobData.jobs}/>
                     </div>
                   </div>
                 </div>
