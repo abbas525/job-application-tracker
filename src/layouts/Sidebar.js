@@ -3,51 +3,22 @@ import Logo from "./Logo";
 import { Link, useLocation } from "react-router-dom";
 
 const navigation = [
+  // {
+  //   title: "Dashboard",
+  //   href: "/starter",
+  //   icon: "bi bi-speedometer2",
+  // },
   {
-    title: "Dashboard",
-    href: "/starter",
-    icon: "bi bi-speedometer2",
+    title: "Add Job",
+    href: "/add-job",
+    icon: "bi bi-briefcase-fill",
   },
   {
-    title: "Alert",
-    href: "/alerts",
-    icon: "bi bi-bell",
+    title: "Applications",
+    href: "/applications",
+    icon: "bi bi-card-checklist",
   },
-  {
-    title: "Badges",
-    href: "/badges",
-    icon: "bi bi-patch-check",
-  },
-  {
-    title: "Buttons",
-    href: "/buttons",
-    icon: "bi bi-hdd-stack",
-  },
-  {
-    title: "Cards",
-    href: "/cards",
-    icon: "bi bi-card-text",
-  },
-  {
-    title: "Grid",
-    href: "/grid",
-    icon: "bi bi-columns",
-  },
-  {
-    title: "Table",
-    href: "/table",
-    icon: "bi bi-layout-split",
-  },
-  {
-    title: "Forms",
-    href: "/forms",
-    icon: "bi bi-textarea-resize",
-  },
-  {
-    title: "Breadcrumbs",
-    href: "/breadcrumbs",
-    icon: "bi bi-link",
-  },
+  
   {
     title: "About",
     href: "/about",
@@ -62,8 +33,8 @@ const Sidebar = () => {
   let location = useLocation();
 
   return (
-    <div className="p-3">
-      <div className="d-flex align-items-center">
+    <div className="p-0">
+      <div className="d-flex align-items-center p-3">
         <Logo />
         <span className="ms-auto d-lg-none">
         <Button
@@ -82,8 +53,8 @@ const Sidebar = () => {
                 to={navi.href}
                 className={
                   location.pathname === navi.href
-                    ? "text-primary nav-link py-3"
-                    : "nav-link text-secondary py-3"
+                    ? "text-light nav-link p-3"
+                    : "nav-link text-light p-3"
                 }
               >
                 <i className={navi.icon}></i>
@@ -91,15 +62,6 @@ const Sidebar = () => {
               </Link>
             </NavItem>
           ))}
-          <Button
-            color="danger"
-            tag="a"
-            target="_blank"
-            className="mt-3"
-            href="https://www.wrappixel.com/templates/xtreme-react-redux-admin/?ref=33"
-          >
-            Upgrade To Pro
-          </Button>
         </Nav>
       </div>
     </div>

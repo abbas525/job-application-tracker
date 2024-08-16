@@ -3,8 +3,9 @@
   width: $sidebarWidth;
   background-color: $sidebarColor;
   .sidenav-bg:hover {
-    background-color: $gray-100;
-    border-radius: $border-radius;
+    background-color: rgb(103,83,255);
+    background: linear-gradient(90deg, rgba(103,83,255,1) 0%, rgba(205,69,255,1) 100%);
+    // border-radius: $border-radius;
   }
 }
 
