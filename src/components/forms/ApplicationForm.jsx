@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Button, Col, Form, FormGroup, Input, Label, Row } from "reactstrap";
 import { useSelector, useDispatch } from "react-redux";
-import { addJob } from "../../views/jobs/jobSlice";
+import { addJob, fetchJobs } from "../../views/jobs/jobSlice";
 
 const ApplicationForm = () => {
   const [position, setPosition] = useState(null)
@@ -32,9 +32,8 @@ const handleSubmit = (e) => {
     'jobUrl': jobUrl
   }
 
- dispatch(addJob(data))
-
-  console.log('submit', jobData);
+dispatch(addJob(data));
+dispatch(fetchJobs());
 }
 
   return (

@@ -1,15 +1,23 @@
 import JobTable from "../components/applicationTable/JobTable";
 import { useSelector, useDispatch } from "react-redux";
-import { addJob } from "./jobs/jobSlice";
+import { addJob,fetchJobs } from "./jobs/jobSlice";
 import FilterJobs from "../components/forms/FilterJobs";
-import { useState } from "react";
+import { useState,useEffect } from "react";
 
 const Applications = () => {
 
 const jobData = useSelector((state) => state.job)
 
 
- 
+const dispatch = useDispatch();
+
+useEffect(() => {
+  // Dispatch the fetchJobs action when the component mounts
+  dispatch(fetchJobs());
+}, [dispatch]);
+
+console.log('dataTable:', jobData);
+
     const headings = [
         "No.",
         "Job position",
@@ -38,7 +46,7 @@ const jobData = useSelector((state) => state.job)
                   </div>
                   <div className="row">
                     <div className="col-md-12">
-                    <JobTable  headings={headings} data={jobData.jobs}/>
+                    <JobTable  headings={headings} data={jobData.job}/>
                     </div>
                   </div>
                 </div>
