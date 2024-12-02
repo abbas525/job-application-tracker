@@ -3,26 +3,54 @@
     {
       "position": "Frontend Developer",
       "company": "Cubix",
-      "dateApplied": "12-Aug-2024",
+      "dateApplied": "2024-11-24",
       "location": "KHI",
       "hrProfile": "https://www.google.com",
-      "followUp": "Date",
+      "followUp": "2024-11-27",
       "status": "Applied",
       "description": "lorem ipsum blah blah blah",
       "jobUrl": "https://www.google.com",
+      "bookmark": true,
       "id": "0a3c"
     },
     {
       "position": "Frontend Developer",
       "company": "Cubix",
-      "dateApplied": "12-Aug-2024",
+      "dateApplied": "2024-6-28",
       "location": "LHR",
       "hrProfile": "https://www.google.com",
-      "followUp": "Date",
+      "followUp": "2024-11-30",
       "status": "Applied",
       "description": "lorem ipsum blah blah blah",
       "jobUrl": "https://www.google.com",
+      "bookmark": false,
       "id": "9f4e"
+    },
+    {
+      "id": "222e",
+      "position": "Frontend Dev",
+      "company": "Avanza",
+      "dateApplied": "2024-11-25",
+      "location": "Islamabad",
+      "status": "Applied",
+      "followUp": "2024-11-26",
+      "description": "We are seeking a Quality Assurance Specialist to join our team. In this role, you will be responsible for reviewing video feeds of transactions taking place in retail stores in the USA. Your primary responsibility will be to ensure the quality and accuracy of these transactions by providing thorough quality checks.",
+      "hrProfile": "https://www.npmjs.com/package/json-server",
+      "jobUrl": "https://www.npmjs.com/package/json-server",
+      "bookmark": false
+    },
+    {
+      "id": "b40a",
+      "position": "UI/UX developer",
+      "company": "Avanza Solutions",
+      "dateApplied": "2025-11-28",
+      "location": "Islamabad",
+      "status": "Not Responded",
+      "followUp": "2024-11-08",
+      "description": "Job Overview\nWe are looking for a talented Frontend Developer to join our dynamic team. The ideal candidate will have a strong passion for developing user-centric web applications and a keen eye for detail. You will collaborate closely with our design and backend teams to deliver modern, responsive, and performant web applications.\n\nKey Responsibilities\nDevelop and maintain web applications using HTML, CSS, JavaScript, and modern frameworks like React or Vue.js.\nCollaborate with UX/UI designers to implement engaging and responsive user interfaces.\nOptimize applications for maximum speed, scalability, and cross-browser compatibility.\nWrite clean, maintainable, and reusable code following industry standards and best practices.\nWork with RESTful APIs to integrate the frontend with backend services.\nDebug and troubleshoot application issues to ensure a seamless user experience.\nStay updated with emerging frontend technologies and trends.\nRequired Skills and Qualifications\nBachelor's degree in Computer Science, Software Engineering, or a related field.\nProficiency in HTML5, CSS3, and JavaScript (ES6+).\nExperience with one or more frontend frameworks/libraries (e.g., React, Vue.js, or Angular).\nFamiliarity with version control tools like Git.\nKnowledge of responsive design principles and tools such as Bootstrap or Tailwind CSS.\nBasic understanding of backend technologies and RESTful API integration.\nStrong problem-solving skills and attention to detail.\nPreferred Qualifications\nExperience with state management libraries (e.g., Redux or Vuex).\nFamiliarity with testing frameworks like Jest or Cypress.\nKnowledge of SEO principles and web accessibility standards.\nExposure to build tools like Webpack or Vite.\n",
+      "hrProfile": "https://www.google.com.pk/",
+      "jobUrl": "https://www.google.com.pk/",
+      "bookmark": false
     }
   ]
 }

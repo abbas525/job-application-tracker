@@ -1,21 +1,24 @@
 import React, { useState } from "react";
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from "reactstrap";
 
-const DescriptionModal = ({modal, toggle, description}) => {
+const DescriptionModal = ({modal, toggle, content, heading, isEdit}) => {
+ 
   return (
     <div>
-       
-    
-      <Modal isOpen={modal} toggle={toggle}>
-        <ModalHeader toggle={toggle}>Job Description</ModalHeader>
+      <Modal isOpen={modal} toggle={toggle} faded="false"  centered={true} style={isEdit ? {} : { maxWidth: '800px' }}>
+        <ModalHeader toggle={toggle}>{heading}</ModalHeader>
         <ModalBody>
-          {description}
+          {content}
         </ModalBody>
-        <ModalFooter>
-          <Button color="secondary" onClick={toggle}>
+       
+        {!isEdit &&   
+         <ModalFooter>
+          <Button color="primary" onClick={toggle}>
             Close
           </Button>
-        </ModalFooter>
+          </ModalFooter>
+         } 
+        
       </Modal>
     </div>
   );

@@ -25,6 +25,7 @@ const initialState = {
 }
 
 export const fetchJobs = createAsyncThunk('job/fetchJobs',async () => {
+   try {
     const response = await fetch('http://localhost:8000/jobs')
     if(!response.ok) {
         throw new Error('Response not OK')
@@ -32,10 +33,13 @@ export const fetchJobs = createAsyncThunk('job/fetchJobs',async () => {
     const data = await response.json();
 
     return data;
+   } catch (error) {
+    console.log('Error with data');
+    
+   }
 })
 
 //Adding Job
-
 export const addJob = createAsyncThunk('job/addJob', async (newJob) => {
     const response = await fetch('http://localhost:8000/jobs', {
         method: 'POST',
@@ -51,6 +55,36 @@ export const addJob = createAsyncThunk('job/addJob', async (newJob) => {
       return data;
 })
 
+//Deleting Job
+export const deleteJob = createAsyncThunk('job/deleteJob', async (id) => {
+    const response = await fetch(`http://localhost:8000/jobs/${id}`, {
+        method: 'DELETE' 
+    })
+    if (!response.ok) {
+        throw new Error('Failed to DELETE job');
+      }
+    //   const data = await response.json();
+    //   return data;
+})
+
+//Deleting Job
+export const editJob = createAsyncThunk('job/editJob', async (updatedData) => {
+    console.log('updatedData', updatedData)
+    const response = await fetch(`http://localhost:8000/jobs/${updatedData.id}`, {
+        method: 'PUT',
+        headers: {
+            'Content-Type':'application/json'
+        },
+        body: JSON.stringify(updatedData)
+    })
+    if (!response.ok) {
+        throw new Error('Failed to add job');
+      }
+      const data = await response.json();
+      return data;
+})
+
+
 
 
 const jobSlice = createSlice({
@@ -64,7 +98,7 @@ const jobSlice = createSlice({
         builder.addCase(fetchJobs.fulfilled, (state, action) => {
             state.loading = false;
             state.job = action.payload;
-            state.error = '';
+            state.error = ''; 
         })
         builder.addCase(fetchJobs.rejected, (state, action) => {
             state.loading = false;
@@ -76,8 +110,9 @@ const jobSlice = createSlice({
         });
         builder.addCase(addJob.fulfilled, (state, action) => {
             state.loading = false;
-            state.job = action.payload;
+            state.job.push(action.payload);
             state.error = '';
+            
         })
         builder.addCase(addJob.rejected, (state, action) => {
             state.loading = false;

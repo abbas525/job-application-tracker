@@ -3,9 +3,46 @@ li.sidenav-bg.nav-item {
 }
 
 
+.btn-unset {
+    all: unset;
+    cursor: pointer; 
+}
 #jobListing {
     td, th {
         white-space: nowrap;
+        text-align: center;
     }
 
 }
+
+.clear-btn {
+    all: unset;
+    cursor: pointer;
+    position: absolute;
+    right: 20%;
+    top: 6px;
+    z-index: 999;
+}
+
+.circle-box > i {
+    font-size: 30px;
+}
+
+.dashboard .card a {
+    color: $gray-900;
+    text-decoration: none;
+    cursor: pointer;
+    border: 2px solid transparent;
+    border-radius: 4px;
+}
+ 
+
+.dashboard .card a.active{
+    border: 2px solid #3A6D8C;
+    border-radius: 4px;
+    background: #3A6D8C;
+ }
+
+ .sidebarArea .nav-link.active {
+    background: $secondary;
+ }

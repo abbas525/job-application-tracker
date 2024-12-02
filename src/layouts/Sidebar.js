@@ -1,20 +1,20 @@
 import { Button, Nav, NavItem } from "reactstrap";
 import Logo from "./Logo";
-import { Link, useLocation } from "react-router-dom";
+import { Link, NavLink, useLocation } from "react-router-dom";
 
 const navigation = [
-  // {
-  //   title: "Dashboard",
-  //   href: "/starter",
-  //   icon: "bi bi-speedometer2",
-  // },
+  {
+    title: "Dashboard",
+    href: "/dashboard",
+    icon: "bi bi-speedometer2",
+  },
   {
     title: "Add Job",
     href: "/add-job",
-    icon: "bi bi-briefcase-fill",
+    icon: "bi bi-briefcase",
   },
   {
-    title: "Applications",
+    title: "All Applications",
     href: "/applications",
     icon: "bi bi-card-checklist",
   },
@@ -35,7 +35,8 @@ const Sidebar = () => {
   return (
     <div className="p-0">
       <div className="d-flex align-items-center p-3">
-        <Logo />
+        {/* <Logo /> */}
+        <h2 className="text-white fs-4 fw-bold">Job Applications<br /> Tracking</h2>
         <span className="ms-auto d-lg-none">
         <Button
           close
@@ -49,17 +50,17 @@ const Sidebar = () => {
         <Nav vertical className="sidebarNav">
           {navigation.map((navi, index) => (
             <NavItem key={index} className="sidenav-bg">
-              <Link
+              <NavLink
                 to={navi.href}
                 className={
                   location.pathname === navi.href
-                    ? "text-light nav-link p-3"
-                    : "nav-link text-light p-3"
+                    ? "text-white nav-link p-3"
+                    : "nav-link text-white p-3"
                 }
               >
                 <i className={navi.icon}></i>
                 <span className="ms-3 d-inline-block">{navi.title}</span>
-              </Link>
+              </NavLink>
             </NavItem>
           ))}
         </Nav>

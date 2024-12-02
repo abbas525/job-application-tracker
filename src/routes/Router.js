@@ -1,7 +1,8 @@
 import { lazy } from "react";
 import { Navigate } from "react-router-dom";
 import Applications from "../views/Applications.jsx";
-import AddJob from "../views/AddJob.jsx";
+import AddJob from "../views/AddJob.jsx";  
+import Dashboard from "../pages/Dashboard.jsx";
 
 /****Layouts*****/
 const FullLayout = lazy(() => import("../layouts/FullLayout.js"));
@@ -22,6 +23,7 @@ const ThemeRoutes = [
       { path: "/add-job", exact: true, element: <AddJob /> },
       { path: "/applications", exact: true, element: <Applications /> },
       { path: "/about", exact: true, element: <About /> },
+       { path: "/dashboard", exact: true, element: <Dashboard /> },
     ],
   },
 ];

@@ -6,14 +6,16 @@ $font-family-sans-serif: "Nunito", sans-serif;
 /*******************/
 // Theme Colors
 /********************/
-$primary: #6753ff;
+$primary: #3A6D8C;
 $info: #3699ff;
 $danger: #f64e60;
 $success: #0bb7af;
 $warning: #ee9d01;
 $dark: #343a40;
-$light: #f7fbea;
-$secondary: #35363b;
+// $light: #f7fbea;
+$light: #c8e5f2;
+$secondary: #6A9AB0;
+
 
 $theme-colors: (
   "primary": $primary,
@@ -28,12 +30,12 @@ $theme-colors: (
   "light-success": #d5f3f2,
   "light-info": #d3edfa,
   "light-warning": #f8ecdc,
-  "light-danger": #f8dddd,
+  // "light-danger": #f8dddd,
 );
 // scss-docs-start gray-color-variables
 $white: #fff !default;
 $gray-100: #f8f9fa !default;
-$gray-200: #eef5f9 !default;
+$gray-200: #F5F5F7 !default;
 $gray-300: #dee2e6 !default;
 $gray-400: #ced4da !default;
 $gray-500: #adb5bd !default;
@@ -81,5 +83,5 @@ $btn-focus-width: 0px;
 /********************/
 $sidebarWidth: 260px;
 // $sidebarColor: #483285;
-$sidebarColor: #061d25;
+$sidebarColor: #3A6D8C;
 
