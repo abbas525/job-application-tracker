@@ -10,7 +10,6 @@ import { fetchJobs } from "../views/jobs/jobSlice";
 
 const Dashboard = () => {
 
-
     const jobData = useSelector(state => state?.job);
     const dispatch = useDispatch();
 

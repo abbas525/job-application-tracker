@@ -1,24 +1,35 @@
 import React, { Suspense } from "react";
 // import ReactDOM from "react-dom";
-import {createRoot} from 'react-dom/client';
+import { createRoot } from 'react-dom/client';
 import "./assets/scss/style.scss";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
-import { HashRouter } from "react-router-dom";
+import { BrowserRouter, HashRouter } from "react-router-dom";
 import Loader from "./layouts/loader/Loader";
 import { Provider } from "react-redux";
 import store from "./store/store";
+import { Auth0Provider } from "@auth0/auth0-react";
+
 
 const rootElement = document.getElementById('root');
 const root = createRoot(rootElement);
 
+
 root.render(
   <Suspense fallback={<Loader />}>
-    <HashRouter>
-      <Provider store={store}>
-      <App />
-      </Provider>
-    </HashRouter>
+    <Auth0Provider
+      domain="dev-vc8o4ca36n5xjfiv.us.auth0.com"
+      clientId="Ed1ZyML3rhneZk5AFsaLdcDpwcE2n2cH"
+      authorizationParams={{
+        redirect_uri: window.location.origin
+      }}
+    >
+      <BrowserRouter>
+        <Provider store={store}>
+          <App />
+        </Provider>
+      </BrowserRouter>
+    </Auth0Provider>
   </Suspense>,
 
   // document.getElementById("root")

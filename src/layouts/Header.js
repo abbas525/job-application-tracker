@@ -15,8 +15,14 @@ import {
 } from "reactstrap";
 import { ReactComponent as LogoWhite } from "../assets/images/logos/xtremelogowhite.svg";
 import user1 from "../assets/images/users/user1.jpg";
+import { useAuth0 } from "@auth0/auth0-react";
 
 const Header = () => {
+  const { logout, user } = useAuth0();
+  console.log('User:', user);
+  
+
+
   const [isOpen, setIsOpen] = React.useState(false);
   const [dropdownOpen, setDropdownOpen] = React.useState(false);
 
@@ -91,7 +97,7 @@ const Header = () => {
             <DropdownItem divider />
             <DropdownItem>My Balance</DropdownItem>
             <DropdownItem>Inbox</DropdownItem>
-            <DropdownItem>Logout</DropdownItem>
+            <DropdownItem onClick={() => logout({ logoutParams: { returnTo: window.location.origin + "/account/login" } })}>Logout</DropdownItem>
           </DropdownMenu>
         </Dropdown>
       </Collapse>
